@@ -26,9 +26,7 @@ public class FirstServlet implements Servlet{
         res.setContentType("text/html");
         PrintWriter out =res.getWriter();
         out.println("<h1>This is My Output From Servlet Method:</h1>");
-        out.println("<h1>Todays date and time is" + new Date().toString()+"</h1>");
-
-    
+        out.println("<h1>Todays date and time is" + new Date().toString()+"</h1>");    
     }
 
     @Override
