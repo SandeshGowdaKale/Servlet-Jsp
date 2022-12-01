@@ -17,8 +17,5 @@ public class MyServlet extends HttpServlet{
         
         out.print("<h1> This is get method of my Servlet </h1>");
         out.print("<h1>"+ new Date().toString()+"</h1>");
-        
     }
-    
-    
 }
