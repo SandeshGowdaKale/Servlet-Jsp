@@ -19,10 +19,5 @@ public class SecondServlet extends GenericServlet{
         res.setContentType("text/html");
         PrintWriter out = res.getWriter();
         out.println("<h1>This is My Second Servlet using Generic Servlet</h1>");
-        
     }
-    
-    
-    
-    
 }

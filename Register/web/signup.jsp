@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Jsp Page</title>
+        <title> Jsp Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Compiled and minified CSS -->
@@ -27,7 +27,7 @@
 
                             <div class="form center-align">
                                 <!--creating form -->
-                                <form action="Register" method="post">
+                                <form action="Register" method="post" id="myform">
                                     <input type="text" name="user_name" placeholder="Enter user name">
                                     <input type="password" name="user_password" placeholder="Enter user password">
                                     <input type="email" name="user_email" placeholder="Enter user email">
@@ -92,7 +92,30 @@
                     crossorigin="anonymous"></script>               
                     <script>
                         $(document).ready(function () {
-                            console.log("page is ready..")
+                        console.log("page is ready..")
+
+                                $('#myform').on('submit', function(event)){
+                        event.preventDefault();
+                        var f = $(this).serialize();
+                        console.log(f);
+                        $(".loader").show();
+                        $(".form").hide();
+                        
+                        
+                        $ajax({
+                        url:"Register"
+                                data : f,
+                                type : 'POST',
+                                success: function (data, textStatus, jqXHR){
+                                console.log(data);
+                                console.log("success.......")
+                                },
+                                error: function (jqXHR, textStatus, errorThrown){
+                                console.log(data);
+                                console.log("error.......")
+                                }
+                        })
+                        }
                         })
                     </script>
                     </body>
